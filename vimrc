@@ -1,7 +1,10 @@
+set nocompatible
+
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
+
 syntax on
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 colorscheme vividchalk
 
 " Backups
