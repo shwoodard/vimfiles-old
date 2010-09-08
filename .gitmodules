@@ -19,3 +19,9 @@
 [submodule "bundle/vim-vividchalk"]
 	path = bundle/vim-vividchalk
 	url = git@github.com:andyferra/vim-vividchalk.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule "bundles/autoclose"]
+	path = bundles/autoclose
+	url = http://github.com/vim-scripts/AutoClose.git
