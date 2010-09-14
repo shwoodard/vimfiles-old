@@ -3,6 +3,8 @@ set nocompatible
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
 syntax on
 filetype plugin indent on
 colorscheme vividchalk
@@ -34,19 +36,23 @@ set nofoldenable
 set foldmethod=syntax
 set foldnestmax=2
 
+" Completion
+set wildmode=list:longest,list:full
+
 
 " Filetypes
-au BufRead,BufNewFile *.feature    set ft=cucumber
-au BufRead,BufNewFile *.haml       set ft=haml
-au BufRead,BufNewFile *.irb        set ft=ruby
-au BufRead,BufNewFile *.liquid     set ft=html
-au BufRead,BufNewFile *.markdown   set ft=markdown
-au BufRead,BufNewFile *.ru         set ft=ruby
-au BufRead,BufNewFile *.sass       set ft=sass
-au BufRead,BufNewFile *.scss       set ft=css
-au BufRead,BufNewFile *.template   set ft=html
-au BufRead,BufNewFile *.text       set ft=textile
-au BufRead,BufNewFile /etc/nginx/* set ft=nginx
+au BufWrite,BufRead,BufNewFile *.feature    set ft=cucumber
+au BufWrite,BufRead,BufNewFile *.haml       set ft=haml
+au BufWrite,BufRead,BufNewFile *.irb        set ft=ruby
+au BufWrite,BufRead,BufNewFile *.json       set ft=javascript
+au BufWrite,BufRead,BufNewFile *.liquid     set ft=html
+au BufWrite,BufRead,BufNewFile *.markdown   set ft=markdown
+au BufWrite,BufRead,BufNewFile *.ru         set ft=ruby
+au BufWrite,BufRead,BufNewFile *.sass       set ft=sass
+au BufWrite,BufRead,BufNewFile *.scss       set ft=css
+au BufWrite,BufRead,BufNewFile *.template   set ft=html
+au BufWrite,BufRead,BufNewFile *.text       set ft=textile
+au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
 au FileType rdoc        set ts=2 sw=2 sts=2 expandtab
