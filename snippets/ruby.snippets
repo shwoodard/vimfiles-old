@@ -1,3 +1,5 @@
 # #!/usr/bin/env ruby
 snippet soap
 	save_and_open_page
+snippet havsel
+	response.body.should have_selector("##{ dom_id ${1:@object} } ${2:.class}", :content => '${3:content}')
