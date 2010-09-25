@@ -33,8 +33,8 @@ set listchars=tab:▸\ ,eol:¬
 
 " Foldings
 set nofoldenable
-set foldmethod=syntax
-set foldnestmax=2
+"   set foldmethod=syntax     " <-------- This is the performance culprit
+"   set foldnestmax=2
 
 " Completion
 set wildmode=list:longest,list:full
