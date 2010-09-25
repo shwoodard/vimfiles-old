@@ -45,4 +45,4 @@
 	url = http://github.com/ervandew/supertab.git
 [submodule "bundle/molokai"]
 	path = bundle/molokai
-	url = http://github.com/vim-scripts/molokai.git
+	url = git@github.com:andyferra/molokai.git
