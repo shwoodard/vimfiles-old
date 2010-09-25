@@ -37,6 +37,12 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = http://github.com/mileszs/ack.vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = http://github.com/ervandew/supertab.git
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = http://github.com/vim-scripts/molokai.git
