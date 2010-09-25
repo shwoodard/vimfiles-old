@@ -34,9 +34,6 @@
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
 	url = http://github.com/tpope/vim-git.git
-[submodule "bundle/ego-vim"]
-	path = bundle/ego-vim
-	url = http://github.com/geetarista/ego.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = http://github.com/mileszs/ack.vim.git
