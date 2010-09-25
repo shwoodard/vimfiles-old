@@ -1,13 +1,14 @@
 set nocompatible
 
+filetype off " Needs to be off before pathogen runs
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 syntax on
-filetype plugin indent on
-colorscheme vividchalk
+filetype plugin indent on " Now that pathogen is loaded we re-enable
+colorscheme molokai
 
 " Backups
 set nobackup
@@ -82,11 +83,10 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Remove trailing spaces in the current document
 nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 
-
 " Automatically Reload Config Files
 if has("autocmd")
-  autocmd bufwritepost .vimrc  source $MYVIMRC
-  autocmd bufwritepost .gvimrc source $MYGVIMRC
+  autocmd bufwritepost *vimrc  source $MYVIMRC
+  autocmd bufwritepost *gvimrc source $MYGVIMRC
 endif
 
 
