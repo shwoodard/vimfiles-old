@@ -23,12 +23,15 @@ set splitright
 set cursorline
 set laststatus=2
 
+" Encoding
+set encoding=utf-8
+
 " Text Wrapping
 set nowrap
 set textwidth=0
 
 " Invisible Characters
-set list
+set nolist
 set backspace=indent,eol,start
 set listchars=tab:▸\ ,eol:¬
 
