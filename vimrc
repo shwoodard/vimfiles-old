@@ -56,6 +56,7 @@ au BufWrite,BufRead,BufNewFile *.sass       set ft=sass
 au BufWrite,BufRead,BufNewFile *.scss       set ft=css
 au BufWrite,BufRead,BufNewFile *.template   set ft=html
 au BufWrite,BufRead,BufNewFile *.text       set ft=textile
+au BufWrite,BufRead,BufNewFile Gemfile      set ft=ruby
 au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
@@ -75,16 +76,20 @@ au FileType javascript  set ts=2 sw=2 sts=2 expandtab
 let mapleader = "\\"
 
 " Toggle Fullscreen
-map <Leader>f :set invfullscreen <CR>
+map <leader>f :set invfullscreen <CR>
 
 " Toggle Invisibles
 nmap <leader>i :set list!<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Remove trailing spaces in the current document
 nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
+
+" Toggle NERDTree
+map <leader>p :NERDTreeToggle <CR>
+
 
 " Automatically Reload Config Files
 if has("autocmd")
