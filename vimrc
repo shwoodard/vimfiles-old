@@ -92,13 +92,6 @@ nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 map <leader>p :NERDTreeToggle <CR>
 
 
-" Automatically Reload Config Files
-if has("autocmd")
-  autocmd bufwritepost *vimrc  source $MYVIMRC
-  autocmd bufwritepost *gvimrc source $MYGVIMRC
-endif
-
-
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
   let _s=@/
