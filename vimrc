@@ -60,6 +60,7 @@ au BufWrite,BufRead,BufNewFile Gemfile      set ft=ruby
 au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
+au FileType yaml        set ts=2 sw=2 sts=2 expandtab
 au FileType rdoc        set ts=2 sw=2 sts=2 expandtab
 au FileType eruby       set ts=2 sw=2 sts=2 expandtab
 au FileType haml        set ts=2 sw=2 sts=2 expandtab
