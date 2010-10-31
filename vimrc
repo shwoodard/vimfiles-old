@@ -91,6 +91,8 @@ nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 " Toggle NERDTree
 map <leader>p :NERDTreeToggle <CR>
 
+" Save the current file as root
+command W w !sudo tee % >/dev/null
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
