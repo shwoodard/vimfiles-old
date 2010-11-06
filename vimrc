@@ -94,6 +94,9 @@ map <leader>p :NERDTreeToggle <CR>
 " Save the current file as root
 command W w !sudo tee % >/dev/null
 
+" Open the current file
+command Open silent!!open %
+
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
   let _s=@/
