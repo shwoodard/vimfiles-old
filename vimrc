@@ -26,9 +26,10 @@ set laststatus=2
 " Encoding
 set encoding=utf-8
 
-" Text Wrapping
+" Text
 set nowrap
 set textwidth=0
+set nospell
 
 " Invisible Characters
 set nolist
@@ -58,6 +59,8 @@ au BufWrite,BufRead,BufNewFile *.template   set ft=html
 au BufWrite,BufRead,BufNewFile *.text       set ft=textile
 au BufWrite,BufRead,BufNewFile Gemfile      set ft=ruby
 au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
+au BufWrite,BufRead,BufNewFile *.txt        set ft=text
+au BufWrite,BufRead,BufNewFile *.snippets   set ft=snippet
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
 au FileType yaml        set ts=2 sw=2 sts=2 expandtab
@@ -71,7 +74,8 @@ au FileType html        set ts=2 sw=2 sts=2 expandtab
 au FileType css         set ts=2 sw=2 sts=2 expandtab
 au FileType markdown    set ts=2 sw=2 sts=2 expandtab
 au FileType javascript  set ts=2 sw=2 sts=2 expandtab
-
+au FileType text        set ts=2 sw=2 sts=2 expandtab
+au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
 
 " \ is the leader character
 let mapleader = "\\"
