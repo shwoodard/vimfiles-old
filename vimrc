@@ -76,6 +76,7 @@ au FileType markdown    set ts=2 sw=2 sts=2 expandtab
 au FileType javascript  set ts=2 sw=2 sts=2 expandtab
 au FileType text        set ts=2 sw=2 sts=2 expandtab
 au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
+au FileType coffee      set ts=2 sw=2 sts=2 expandtab
 
 " \ is the leader character
 let mapleader = "\\"
