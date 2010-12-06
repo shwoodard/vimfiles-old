@@ -19,9 +19,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = http://github.com/msanders/snipmate.vim.git
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = http://github.com/vim-scripts/AutoClose.git
 [submodule "bundle/align"]
 	path = bundle/align
 	url = http://github.com/tsaleh/vim-align.git
@@ -55,3 +52,6 @@
 [submodule "bundle/vim-kata"]
 	path = bundle/vim-kata
 	url = https://github.com/canadaduane/VimKata.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
