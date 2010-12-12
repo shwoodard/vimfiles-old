@@ -4,7 +4,6 @@ filetype off " Needs to be off before pathogen runs
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
@@ -73,6 +72,7 @@ au FileType sass        set ts=2 sw=2 sts=2 expandtab
 au FileType html        set ts=2 sw=2 sts=2 expandtab
 au FileType css         set ts=2 sw=2 sts=2 expandtab
 au FileType markdown    set ts=2 sw=2 sts=2 expandtab
+au FileType vim         set ts=2 sw=2 sts=2 expandtab
 au FileType javascript  set ts=2 sw=2 sts=2 expandtab
 au FileType text        set ts=2 sw=2 sts=2 expandtab
 au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
@@ -96,11 +96,36 @@ nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 " Toggle NERDTree
 map <leader>p :NERDTreeToggle <CR>
 
+" Print the Syntax Group under the cursor
+map <leader>s :echo SyntaxItem()<CR>
+
+" Wrappy Stuff for Visual Mode
+vmap ' s'
+vmap " s"
+vmap ( s(
+vmap { s{
+vmap [ s[
+
 " Save the current file as root
-command W w !sudo tee % >/dev/null
+command! W w !sudo tee % >/dev/null
 
 " Open the current file
-command Open silent!!open %
+command! Open silent!!open %
+
+inoremap # <C-O>:call InsertPoundOrRubyInterpolation()<CR>
+
+function! InsertPoundOrRubyInterpolation()
+  if SyntaxItem() == 'rubyString'
+    exe 'normal! a#{  }'
+    exe 'normal! h'
+  else
+    exe 'normal! a#'
+  endif
+endfunction
+
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -113,3 +138,5 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
