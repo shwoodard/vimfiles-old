@@ -52,3 +52,6 @@
 [submodule "bundle/vim-kata"]
 	path = bundle/vim-kata
 	url = https://github.com/canadaduane/VimKata.git
+[submodule "bundle/delimitmate"]
+	path = bundle/delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
