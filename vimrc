@@ -112,20 +112,8 @@ command! W w !sudo tee % >/dev/null
 " Open the current file
 command! Open silent!!open %
 
-inoremap # <C-O>:call InsertPoundOrRubyInterpolation()<CR>
-
-function! InsertPoundOrRubyInterpolation()
-  if SyntaxItem() == 'rubyString'
-    exe 'normal! a#{  }'
-    exe 'normal! h'
-  else
-    exe 'normal! a#'
-  endif
-endfunction
-
-function! SyntaxItem()
-  return synIDattr(synID(line("."),col("."),1),"name")
-endfunction
+" Create a ruby interpolation when you type #{
+inoremap #{ #{  }<left><left>
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
