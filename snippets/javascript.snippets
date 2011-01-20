@@ -1,2 +1,4 @@
 snippet $
 	$(${1}).${2:click}(${3});
+snippet focus
+	$('input[type!=hidden], select, textarea').first().focus();

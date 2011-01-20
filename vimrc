@@ -4,7 +4,6 @@ filetype off " Needs to be off before pathogen runs
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
-
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
 colorscheme molokai
@@ -43,6 +42,8 @@ set nofoldenable
 " Completion
 set wildmode=list:longest,list:full
 
+" Spelling
+set spelllang=en_us
 
 " Filetypes
 au BufWrite,BufRead,BufNewFile *.feature    set ft=cucumber
@@ -82,22 +83,25 @@ au FileType coffee      set ts=2 sw=2 sts=2 expandtab
 let mapleader = "\\"
 
 " Toggle Fullscreen
-map <leader>f :set invfullscreen <CR>
+nmap <silent> <leader>f :set invfullscreen <CR>
 
 " Toggle Invisibles
-nmap <leader>i :set list!<CR>
+nmap <silent> <leader>i :set list!<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" Remove trailing spaces in the current document
-nnoremap <silent> <leader>s :call <SID>StripTrailingWhitespaces()<CR>
-
 " Toggle NERDTree
-map <leader>p :NERDTreeToggle <CR>
+nmap <silent> <leader>p :NERDTreeToggle <CR>
 
-" Print the Syntax Group under the cursor
-map <leader>s :echo SyntaxItem()<CR>
+" Toggle soft-wrapping
+nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
+
+" Toggle Spell-Checking
+nmap <silent> <leader>s :set spell!<CR>
+
+" Create a ruby interpolation when you type #{
+inoremap #{ #{  }<left><left>
 
 " Wrappy Stuff for Visual Mode
 vmap ' s'
@@ -106,14 +110,28 @@ vmap ( s(
 vmap { s{
 vmap [ s[
 
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
 " Save the current file as root
 command! W w !sudo tee % >/dev/null
 
 " Open the current file
 command! Open silent!!open %
 
-" Create a ruby interpolation when you type #{
-inoremap #{ #{  }<left><left>
+" NERDCommenter Settings
+let NERDSpaceDelims = 1
+
+" Unformatting
+nmap <silent><leader>u :s/\v(\S+)@<=\s+/ /g<CR>
+vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR> 
+
+nmap <leader>f :r ~/Desktop/foo.txt<cr><esc>i
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -128,3 +146,13 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
+let g:user_zen_settings = {
+\  'xml' : {
+\    'extends' : 'html',
+\  },
+\  'haml' : {
+\    'extends' : 'html',
+\    'filters' : 'haml',
+\  },
+\}
