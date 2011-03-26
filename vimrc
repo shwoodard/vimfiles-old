@@ -54,13 +54,14 @@ au BufWrite,BufRead,BufNewFile *.liquid     set ft=html
 au BufWrite,BufRead,BufNewFile *.markdown   set ft=markdown
 au BufWrite,BufRead,BufNewFile *.ru         set ft=ruby
 au BufWrite,BufRead,BufNewFile *.sass       set ft=sass
-au BufWrite,BufRead,BufNewFile *.scss       set ft=css
+au BufWrite,BufRead,BufNewFile *.scss       set ft=scss
 au BufWrite,BufRead,BufNewFile *.template   set ft=html
 au BufWrite,BufRead,BufNewFile *.text       set ft=textile
 au BufWrite,BufRead,BufNewFile Gemfile      set ft=ruby
 au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 au BufWrite,BufRead,BufNewFile *.txt        set ft=text
 au BufWrite,BufRead,BufNewFile *.snippets   set ft=snippet
+au BufWrite,BufRead,BufNewFile *.thor       set ft=ruby
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
 au FileType yaml        set ts=2 sw=2 sts=2 expandtab
@@ -70,6 +71,7 @@ au FileType haml        set ts=2 sw=2 sts=2 expandtab
 au FileType html        set ts=2 sw=2 sts=2 expandtab
 au FileType php         set ts=2 sw=2 sts=2 expandtab
 au FileType sass        set ts=2 sw=2 sts=2 expandtab
+au FileType scss        set ts=2 sw=2 sts=2 expandtab
 au FileType html        set ts=2 sw=2 sts=2 expandtab
 au FileType css         set ts=2 sw=2 sts=2 expandtab
 au FileType markdown    set ts=2 sw=2 sts=2 expandtab
@@ -78,6 +80,7 @@ au FileType javascript  set ts=2 sw=2 sts=2 expandtab
 au FileType text        set ts=2 sw=2 sts=2 expandtab
 au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
 au FileType coffee      set ts=2 sw=2 sts=2 expandtab
+au FileType zsh         set ts=2 sw=2 sts=2 noexpandtab
 
 " \ is the leader character
 let mapleader = "\\"
@@ -101,7 +104,7 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 nmap <silent> <leader>s :set spell!<CR>
 
 " Create a ruby interpolation when you type #{
-inoremap #{ #{  }<left><left>
+" inoremap #{ #{  }<left><left>
 
 " Wrappy Stuff for Visual Mode
 vmap ' s'
@@ -130,8 +133,6 @@ let NERDSpaceDelims = 1
 " Unformatting
 nmap <silent><leader>u :s/\v(\S+)@<=\s+/ /g<CR>
 vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR> 
-
-nmap <leader>f :r ~/Desktop/foo.txt<cr><esc>i
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
