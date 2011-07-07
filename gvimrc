@@ -1,4 +1,4 @@
-set guifont=Inconsolata-dz:h12 " Font & Size
+set guifont=Inconsolata-g:h12  " Font & Size
 set linespace=5                " Spacing between lines
 set guioptions-=T              " No Toolbar
 set guioptions+=c              " Use console dialogs

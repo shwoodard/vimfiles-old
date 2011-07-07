@@ -6,7 +6,7 @@ silent! call pathogen#helptags()
 
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
-colorscheme molokai
+colorscheme vividchalk
 
 " Backups
 set nobackup
@@ -62,6 +62,8 @@ au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 au BufWrite,BufRead,BufNewFile *.txt        set ft=text
 au BufWrite,BufRead,BufNewFile *.snippets   set ft=snippet
 au BufWrite,BufRead,BufNewFile *.thor       set ft=ruby
+au BufWrite,BufRead,BufNewFile *.watchr     set ft=ruby
+au BufWrite,BufRead,BufNewFile *.html       set ft=html
 
 au FileType ruby        set ts=2 sw=2 sts=2 expandtab
 au FileType yaml        set ts=2 sw=2 sts=2 expandtab
@@ -80,6 +82,7 @@ au FileType javascript  set ts=2 sw=2 sts=2 expandtab
 au FileType text        set ts=2 sw=2 sts=2 expandtab
 au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
 au FileType coffee      set ts=2 sw=2 sts=2 expandtab
+au FileType cucumber    set ts=2 sw=2 sts=2 expandtab
 au FileType zsh         set ts=2 sw=2 sts=2 noexpandtab
 
 " \ is the leader character
@@ -102,6 +105,9 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 
 " Toggle Spell-Checking
 nmap <silent> <leader>s :set spell!<CR>
+
+" Exit Insert Mode
+imap kj <C-[>
 
 " Create a ruby interpolation when you type #{
 " inoremap #{ #{  }<left><left>
@@ -133,6 +139,9 @@ let NERDSpaceDelims = 1
 " Unformatting
 nmap <silent><leader>u :s/\v(\S+)@<=\s+/ /g<CR>
 vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR> 
+
+" Toggle Comments
+map <silent><D-/> <leader>c<space>
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
