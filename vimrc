@@ -6,7 +6,7 @@ silent! call pathogen#helptags()
 
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
-colorscheme vividchalk
+colorscheme BlackboardBlack
 
 " Backups
 set nobackup
@@ -64,26 +64,30 @@ au BufWrite,BufRead,BufNewFile *.snippets   set ft=snippet
 au BufWrite,BufRead,BufNewFile *.thor       set ft=ruby
 au BufWrite,BufRead,BufNewFile *.watchr     set ft=ruby
 au BufWrite,BufRead,BufNewFile *.html       set ft=html
+au BufWrite,BufRead,BufNewFile *.as         set ft=actionscript
+au BufWrite,BufRead,BufNewFile *.c          set ft=c
 
-au FileType ruby        set ts=2 sw=2 sts=2 expandtab
-au FileType yaml        set ts=2 sw=2 sts=2 expandtab
-au FileType rdoc        set ts=2 sw=2 sts=2 expandtab
-au FileType eruby       set ts=2 sw=2 sts=2 expandtab
-au FileType haml        set ts=2 sw=2 sts=2 expandtab
-au FileType html        set ts=2 sw=2 sts=2 expandtab
-au FileType php         set ts=2 sw=2 sts=2 expandtab
-au FileType sass        set ts=2 sw=2 sts=2 expandtab
-au FileType scss        set ts=2 sw=2 sts=2 expandtab
-au FileType html        set ts=2 sw=2 sts=2 expandtab
-au FileType css         set ts=2 sw=2 sts=2 expandtab
-au FileType markdown    set ts=2 sw=2 sts=2 expandtab
-au FileType vim         set ts=2 sw=2 sts=2 expandtab
-au FileType javascript  set ts=2 sw=2 sts=2 expandtab
-au FileType text        set ts=2 sw=2 sts=2 expandtab
-au FileType snippet     set ts=8 sw=8 sts=8 noexpandtab
-au FileType coffee      set ts=2 sw=2 sts=2 expandtab
-au FileType cucumber    set ts=2 sw=2 sts=2 expandtab
-au FileType zsh         set ts=2 sw=2 sts=2 noexpandtab
+au FileType ruby         set ts=2 sw=2 sts=2 expandtab
+au FileType yaml         set ts=2 sw=2 sts=2 expandtab
+au FileType rdoc         set ts=2 sw=2 sts=2 expandtab
+au FileType eruby        set ts=2 sw=2 sts=2 expandtab
+au FileType haml         set ts=2 sw=2 sts=2 expandtab
+au FileType html         set ts=2 sw=2 sts=2 expandtab
+au FileType php          set ts=2 sw=2 sts=2 expandtab
+au FileType sass         set ts=2 sw=2 sts=2 expandtab
+au FileType scss         set ts=2 sw=2 sts=2 expandtab
+au FileType html         set ts=2 sw=2 sts=2 expandtab
+au FileType css          set ts=2 sw=2 sts=2 expandtab
+au FileType markdown     set ts=2 sw=2 sts=2 expandtab
+au FileType vim          set ts=2 sw=2 sts=2 expandtab
+au FileType javascript   set ts=2 sw=2 sts=2 expandtab
+au FileType text         set ts=2 sw=2 sts=2 expandtab
+au FileType snippet      set ts=8 sw=8 sts=8 noexpandtab
+au FileType coffee       set ts=2 sw=2 sts=2 expandtab
+au FileType cucumber     set ts=2 sw=2 sts=2 expandtab
+au FileType zsh          set ts=2 sw=2 sts=2 noexpandtab
+au FileType actionscript set ts=8 sw=8 sts=8 noexpandtab
+au FileType c            set ts=4 sw=4 sts=4 noexpandtab
 
 " \ is the leader character
 let mapleader = "\\"
@@ -115,9 +119,12 @@ imap kj <C-[>
 " Wrappy Stuff for Visual Mode
 vmap ' s'
 vmap " s"
-vmap ( s(
+vmap ( s)
+vmap ) s(
 vmap { s{
-vmap [ s[
+vmap } s}
+vmap [ s]
+vmap ] s[
 
 " Bubble single lines
 nmap <C-Up> ddkP
@@ -142,6 +149,12 @@ vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR>
 
 " Toggle Comments
 map <silent><D-/> <leader>c<space>
+
+" Window Manipulation
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.

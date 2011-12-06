@@ -13,9 +13,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim.git
 [submodule "bundle/align"]
 	path = bundle/align
 	url = http://github.com/tsaleh/vim-align.git
@@ -61,3 +58,15 @@
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+[submodule "bundle/vim-vividchalk"]
+	path = bundle/vim-vividchalk
+	url = git@github.com:andyferra/vim-vividchalk.git
+[submodule "bundle/vim-color-raggi"]
+	path = bundle/vim-color-raggi
+	url = https://github.com/raggi/vim-color-raggi.git
+[submodule "bundle/actionscript-vim"]
+	path = bundle/actionscript-vim
+	url = https://github.com/vim-scripts/actionscript.vim--Jethani.git
+[submodule "bundle/vim_colors"]
+	path = bundle/vim_colors
+	url = https://github.com/squil/vim_colors.git
