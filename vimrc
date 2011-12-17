@@ -2,11 +2,12 @@ set nocompatible
 
 filetype off " Needs to be off before pathogen runs
 silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+silent! call pathogen#helptags() 
 
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
-colorscheme BlackboardBlack
+set background=dark
+colorscheme solarized
 
 " Backups
 set nobackup
@@ -155,6 +156,10 @@ map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
+
+" Insert New Lines and stay in normal mode
+nmap <leader>o o<ESC>
+nmap <leader>O O<ESC>
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
