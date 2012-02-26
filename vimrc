@@ -111,9 +111,6 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 " Toggle Spell-Checking
 nmap <silent> <leader>s :set spell!<CR>
 
-" Exit Insert Mode
-imap kj <C-[>
-
 " Create a ruby interpolation when you type #{
 " inoremap #{ #{  }<left><left>
 
@@ -184,3 +181,5 @@ let g:user_zen_settings = {
 \    'filters' : 'haml',
 \  },
 \}
+
+source ~/.vimrc.guest
