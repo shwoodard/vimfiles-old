@@ -114,6 +114,24 @@ nmap <silent> <leader>s :set spell!<CR>
 " Create a ruby interpolation when you type #{
 " inoremap #{ #{  }<left><left>
 
+" Indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Split Navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Use very-magic Regex
+nnoremap / /\v
+vnoremap / /\v
+
+" Soft-wrapped-friendly movement
+nnoremap j gj
+nnoremap k gk
+
 " Wrappy Stuff for Visual Mode
 vmap ' s'
 vmap " s"
@@ -123,6 +141,15 @@ vmap { s{
 vmap } s}
 vmap [ s]
 vmap ] s[
+
+" 80-char warning
+if exists('+colorcolumn')
+  set colorcolumn=80
+  " move to colorscheme if possible
+  highlight ColorColumn guibg=#1c1c21
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " Bubble single lines
 nmap <C-Up> ddkP
@@ -148,27 +175,9 @@ vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR>
 " Toggle Comments
 map <silent><D-/> <leader>c<space>
 
-" Window Manipulation
-map <C-H> <C-W>h
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
-
 " Insert New Lines and stay in normal mode
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
-
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
