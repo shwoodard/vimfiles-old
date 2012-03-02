@@ -178,14 +178,4 @@ nmap <leader>O O<ESC>
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
-let g:user_zen_settings = {
-\  'xml' : {
-\    'extends' : 'html',
-\  },
-\  'haml' : {
-\    'extends' : 'html',
-\    'filters' : 'haml',
-\  },
-\}
-
 source ~/.vimrc.guest
