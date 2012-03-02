@@ -111,9 +111,6 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 " Toggle Spell-Checking
 nmap <silent> <leader>s :set spell!<CR>
 
-" Create a ruby interpolation when you type #{
-" inoremap #{ #{  }<left><left>
-
 " Indenting
 vnoremap < <gv
 vnoremap > >gv
