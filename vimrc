@@ -111,10 +111,6 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 " Toggle Spell-Checking
 nmap <silent> <leader>s :set spell!<CR>
 
-" Indenting
-vnoremap < <gv
-vnoremap > >gv
-
 " Split Navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
