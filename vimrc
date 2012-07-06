@@ -136,13 +136,13 @@ vmap [ s]
 vmap ] s[
 
 " 80-char warning
-if exists('+colorcolumn')
-  set colorcolumn=80
-  " move to colorscheme if possible
-  highlight ColorColumn guibg=#1c1c21
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+" if exists('+colorcolumn')
+  " set colorcolumn=80
+  " " move to colorscheme if possible
+  " highlight ColorColumn guibg=#1c1c21
+" else
+  " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" endif
 
 " Bubble single lines
 nmap <C-Up> ddkP
