@@ -41,7 +41,9 @@ set nofoldenable
 "   set foldnestmax=2
 
 " Completion
-set wildmode=list:longest,list:full
+" set wildmode=list:longest,list:full
+set wildmode=full
+set wildmenu
 
 " Spelling
 set spelllang=en_us
