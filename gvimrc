@@ -1,4 +1,4 @@
-set guifont=Inconsolata-g:h14  " Font & Size
+set guifont=Inconsolata-g:h12  " Font & Size
 set guioptions-=T              " No Toolbar
 set guioptions+=c              " Use console dialogs
 set guioptions-=r              " Hide scrollbar
