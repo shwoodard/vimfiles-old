@@ -73,3 +73,9 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/BusyBee"]
+	path = bundle/BusyBee
+	url = git://github.com/vim-scripts/BusyBee.git
+[submodule "bundle/Wombat"]
+	path = bundle/Wombat
+	url = git://github.com/vim-scripts/Wombat.git
