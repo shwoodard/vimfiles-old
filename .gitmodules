@@ -82,3 +82,6 @@
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "bundle/grep"]
+	path = bundle/grep
+	url = git@github.com:vim-scripts/grep.vim.git
