@@ -79,3 +79,6 @@
 [submodule "bundle/Wombat"]
 	path = bundle/Wombat
 	url = git://github.com/vim-scripts/Wombat.git
+[submodule "bundle/handlebars"]
+	path = bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git
