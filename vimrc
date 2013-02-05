@@ -7,7 +7,7 @@ silent! call pathogen#helptags()
 syntax on
 filetype plugin indent on " Now that pathogen is loaded we re-enable
 set background=dark
-colorscheme vividchalk
+colorscheme base16-eighties
 
 " Backups
 set nobackup

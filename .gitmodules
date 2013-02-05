@@ -85,3 +85,6 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = git@github.com:vim-scripts/grep.vim.git
+[submodule "bundle/base16-colors"]
+	path = bundle/base16-colors
+	url = git@github.com:chriskempson/base16-vim.git
