@@ -95,9 +95,6 @@ au FileType c            set ts=4 sw=4 sts=4 noexpandtab
 " \ is the leader character
 let mapleader = "\\"
 
-" Toggle Fullscreen
-nmap <silent> <leader>f :set invfullscreen <CR>
-
 " Toggle Invisibles
 nmap <silent> <leader>i :set list!<CR>
 
@@ -112,12 +109,6 @@ nmap <silent> <leader>w :set wrap! linebreak! nolist<CR>
 
 " Toggle Spell-Checking
 nmap <silent> <leader>s :set spell!<CR>
-
-" Split Navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Use very-magic Regex
 nnoremap / /\v
@@ -137,15 +128,6 @@ vmap } s}
 vmap [ s]
 vmap ] s[
 
-" 80-char warning
-" if exists('+colorcolumn')
-  " set colorcolumn=80
-  " " move to colorscheme if possible
-  " highlight ColorColumn guibg=#1c1c21
-" else
-  " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-" endif
-
 " Bubble single lines
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
@@ -157,9 +139,6 @@ vmap <C-Down> xp`[V`]
 " Save the current file as root
 command! W w !sudo tee % >/dev/null
 
-" Open the current file
-command! Open silent!!open %
-
 " NERDCommenter Settings
 let NERDSpaceDelims = 1
 
@@ -169,10 +148,6 @@ vmap <silent><leader>u J :s/\v(\S+)@<=\s+/ /g<CR>
 
 " Toggle Comments
 map <silent><D-/> <leader>c<space>
-
-" Insert New Lines and stay in normal mode
-nmap <leader>o o<ESC>
-nmap <leader>O O<ESC>
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
