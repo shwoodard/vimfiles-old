@@ -120,14 +120,12 @@ nnoremap j gj
 nnoremap k gk
 
 " Wrappy Stuff for Visual Mode
-vmap ' s'
-vmap " s"
-vmap ( s)
-vmap ) s(
-vmap { s{
-vmap } s}
-vmap [ s]
-vmap ] s[
+vnoremap ( s)
+vnoremap ) s(
+vnoremap { s{
+vnoremap } s}
+vnoremap [ s]
+vnoremap ] s[
 
 " Bubble single lines
 nmap <C-Up> ddkP
