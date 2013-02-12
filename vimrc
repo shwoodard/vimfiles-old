@@ -61,6 +61,7 @@ au BufWrite,BufRead,BufNewFile *.scss       set ft=scss
 au BufWrite,BufRead,BufNewFile *.template   set ft=html
 au BufWrite,BufRead,BufNewFile *.text       set ft=textile
 au BufWrite,BufRead,BufNewFile Gemfile      set ft=ruby
+au BufWrite,BufRead,BufNewFile Capfile      set ft=ruby
 au BufWrite,BufRead,BufNewFile /etc/nginx/* set ft=nginx
 au BufWrite,BufRead,BufNewFile *.txt        set ft=text
 au BufWrite,BufRead,BufNewFile *.snippets   set ft=snippet
